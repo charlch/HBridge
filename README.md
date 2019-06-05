@@ -7,7 +7,7 @@ Example:
 
 const float DEAD_BAND_FRC = 0.01;
 
-//Create the motor driver, setting it's pine and dead band fraction
+//Create the motor driver, setting it's pin and dead band fraction
 HBridge motor(1, 2, DEAD_BAND_FRC);
 
 
