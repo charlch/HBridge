@@ -37,7 +37,7 @@ void HBridge::set_signal(float signal)
 
   if (_pinEn > -1)
   {
-    analogWrite(_pinEn, (int)255*signal);
+    analogWrite(_pinEn, (int)255*abs(signal));
     inSig = 255;
   }
   else
