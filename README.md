@@ -5,10 +5,8 @@ Example:
 ```
 #include <HBridge.h>
 
-const float DEAD_BAND_FRC = 0.01;
-
-//Create the motor driver, setting it's pins and dead band fraction
-HBridge motor(1, 2, DEAD_BAND_FRC);
+//Create the motor driver, setting it's pins
+HBridge motor(1, 2);
 
 
 //Drive the motor forward at 50%
