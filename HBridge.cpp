@@ -1,18 +1,18 @@
 #include "Arduino.h"
 #include "HBridge.h"
 
-HBridge::HBridge(int pinA, int pinB, float dead_band_fct)
+HBridge::HBridge(int pinA, int pinB)
 {
   pinMode(pinA, OUTPUT);
   pinMode(pinB, OUTPUT);
   _pinA = pinA;
   _pinB = pinB;
   _pinEn = -1;
-  _dead_band_fct = dead_band_fct;
+  _dead_band_fct = 0.01;
   set_signal(0.0);
 }
 
-HBridge::HBridge(int pinA, int pinB, int pinEn, float dead_band_fct)
+HBridge::HBridge(int pinA, int pinB, int pinEn)
 {
   pinMode(pinA, OUTPUT);
   pinMode(pinB, OUTPUT);
@@ -20,8 +20,13 @@ HBridge::HBridge(int pinA, int pinB, int pinEn, float dead_band_fct)
   _pinA = pinA;
   _pinB = pinB;
   _pinEn = pinEn;
-  _dead_band_fct = dead_band_fct;
+  _dead_band_fct = 0.01;
   set_signal(0.0);
+}
+
+void set_dead_band_fct(float dead_band_fct)
+{
+  _dead_band_fct = dead_band_fct;
 }
 
 void HBridge::set_signal(float signal)
