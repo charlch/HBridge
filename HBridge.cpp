@@ -47,7 +47,7 @@ void HBridge::set_signal(float signal)
   }
   else
   {
-    inSig = (int)255*signal;
+    inSig = (int)255*abs(signal);
   }
 
   if (signal > 0)
