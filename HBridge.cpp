@@ -24,7 +24,7 @@ HBridge::HBridge(int pinA, int pinB, int pinEn)
   set_signal(0.0);
 }
 
-void set_dead_band_fct(float dead_band_fct)
+void HBridge::set_dead_band_fct(float dead_band_fct)
 {
   _dead_band_fct = dead_band_fct;
 }
